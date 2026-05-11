@@ -34,7 +34,6 @@ window.addEventListener('scroll',()=>{
   if(!pin) return;
   const frame = pin.querySelector('.about-frame');
   const img   = pin.querySelector('.about-img');
-  const shade = pin.querySelector('.about-frame-shade');
   const head  = pin.querySelector('.about-head');
 
   const START  = { padX:13, padTop:42, padBot:6,  r:28, scale:1.12 };
@@ -69,9 +68,6 @@ window.addEventListener('scroll',()=>{
     frame.style.setProperty('--pad-bot', lerp(s.padBot, END.padBot, e) + 'vh');
     frame.style.setProperty('--r',       lerp(s.r,      END.r,      e) + 'px');
     img.style.setProperty('--scale',     lerp(START.scale, END.scale, e).toFixed(4));
-
-    // Shade fades in as photo opens
-    if(shade) shade.style.setProperty('--shade-op', e.toFixed(3));
 
     // Header: moves from top to vertical center as the photo expands
     if(head){
