@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>КРМК — Казанский радиомеханический колледж</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="КРМК — на главную">
+      <svg viewBox="0 0 60 60" width="34" height="34" aria-hidden="true">
+        <!-- Green figure -->
+        <rect x="8"  y="28" width="6" height="26" rx="3" fill="#1ea33f"/>
+        <circle cx="11" cy="24" r="6" fill="#1ea33f"/>
+        <!-- Red figure (tallest) -->
+        <rect x="21" y="18" width="6" height="36" rx="3" fill="#e53935"/>
+        <circle cx="24" cy="14" r="6.5" fill="#e53935"/>
+        <!-- Purple figure (shortest) -->
+        <rect x="34" y="36" width="6" height="18" rx="3" fill="#5e35b1"/>
+        <circle cx="37" cy="32" r="6" fill="#5e35b1"/>
+        <!-- Yellow figure -->
+        <rect x="47" y="24" width="6" height="30" rx="3" fill="#f9a825"/>
+        <circle cx="50" cy="20" r="6" fill="#f9a825"/>
+      </svg>
+    </a>
+
+    <div class="nav-pill">
+      <a href="#about">О колледже</a>
+      <a href="#specs">Программы</a>
+      <a href="#why">Почему мы</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+
+    <a href="#apply" class="nav-cta">
+      <span>Поступить</span>
+      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="assets/hero%20(1).mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Казанский радиомеханический колледж</span>
+    <h1 class="hero-title">Технопарк <br><em>цифровой</em> трансформации</h1>
+    <p class="hero-sub">Готовим специалистов в инжиниринге, IT и креативной экономике. Поступление без ЕГЭ — на бюджет.</p>
+    <div class="hero-cta">
+      <a href="#specs" class="btn btn-primary">Выбрать специальность</a>
+      <a href="#about" class="btn btn-ghost">Узнать больше</a>
+    </div>
+    <div class="hero-stats">
+      <div><b>10</b><span>направлений</span></div>
+      <div><b>0₽</b><span>обучение на бюджете</span></div>
+      <div><b>без</b><span>ЕГЭ и ГИА</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Скролл</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="about">
+  <div class="about-pin">
+    <div class="about-pin-inner">
+      <header class="sec-head about-head">
+        <span class="sec-pill">01 — О колледже</span>
+        <h2 class="sec-title">Не просто колледж — <em>технопарк</em></h2>
+        <p class="sec-lead">Соединяем инженерию, IT и креативные индустрии под одной крышей.</p>
+      </header>
+      <div class="about-frame">
+        <img class="about-img" src="assets/%D1%82%D0%B5%D1%81%D1%82.jpg" alt="Учебный процесс в КРМК">
+        <div class="about-frame-shade" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Three pillars — Fixaplan-style (sticky sidebar + scrolling cards) -->
+<section class="pillars-v2" id="pillars">
+  <div class="container pl-grid">
+
+    <!-- LEFT (sticky) -->
+    <aside class="pl-left">
+      <div class="pl-sticky">
+        <span class="pl-pill">02 — Направления</span>
+        <h2 class="pl-title">Три профессиональные области <em>под одной крышей</em></h2>
+
+        <ul class="pl-tabs" role="tablist">
+          <li class="pl-tab is-active" data-id="1" role="tab" tabindex="0">Механика и радиоэлектроника</li>
+          <li class="pl-tab"           data-id="2" role="tab" tabindex="0">Информационные технологии</li>
+          <li class="pl-tab"           data-id="3" role="tab" tabindex="0">Креативная экономика</li>
+        </ul>
+
+        <p class="pl-desc">Каждая программа КРМК относится к одному из трёх направлений. Скролли и узнавай — или нажми плашку.</p>
+      </div>
+    </aside>
+
+    <!-- RIGHT (scrolling cards) -->
+    <div class="pl-cards">
+
+      <!-- Card 1: Механика и радиоэлектроника -->
+      <article class="pl-card" data-id="1" data-tone="warm">
+        <div class="pl-card-glow" aria-hidden="true"></div>
+        <header class="pl-card-head">
+          <div class="pl-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <span class="pl-card-eyebrow">Направление I</span>
+        </header>
+        <h3 class="pl-card-title">Механика и&nbsp;радиоэлектроника</h3>
+        <p class="pl-card-text">Производство, робототехника, ЧПУ и&nbsp;радиоэлектронные приборы — классическая инженерия в&nbsp;современном исполнении.</p>
+        <div class="pl-card-panel">
+          <span class="pl-card-label">7 специальностей</span>
+          <div class="pl-chips">
+            <span class="chip">Мехатроника и&nbsp;робототехника</span>
+            <span class="chip">Технология машиностроения</span>
+            <span class="chip">Оператор-наладчик ЧПУ</span>
+            <span class="chip">Монтаж и&nbsp;ремонт электроники</span>
+            <span class="chip">Монтажник РЭА</span>
+            <span class="chip">Управление качеством</span>
+            <span class="chip">Мастер слесарных работ</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Информационные технологии -->
+      <article class="pl-card" data-id="2" data-tone="cool">
+        <div class="pl-card-glow" aria-hidden="true"></div>
+        <header class="pl-card-head">
+          <div class="pl-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <span class="pl-card-eyebrow">Направление II</span>
+        </header>
+        <h3 class="pl-card-title">Информационные технологии</h3>
+        <p class="pl-card-text">Компьютерные системы, программирование и&nbsp;цифровая инфраструктура. Профессии, востребованные сегодня и&nbsp;завтра.</p>
+        <div class="pl-card-panel">
+          <span class="pl-card-label">1 специальность</span>
+          <div class="pl-chips">
+            <span class="chip">Компьютерные системы и&nbsp;комплексы</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Креативная экономика -->
+      <article class="pl-card" data-id="3" data-tone="rose">
+        <div class="pl-card-glow" aria-hidden="true"></div>
+        <header class="pl-card-head">
+          <div class="pl-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 22a4 4 0 0 0 4-4c0-2-2-3-2-3l-3-2.5L8 15s-2 1-2 3a4 4 0 0 0 4 4"/></svg>
+          </div>
+          <span class="pl-card-eyebrow">Направление III</span>
+        </header>
+        <h3 class="pl-card-title">Креативная экономика</h3>
+        <p class="pl-card-text">Дизайн, event-менеджмент и&nbsp;социально-культурная деятельность. Творчество как профессия и&nbsp;продукт.</p>
+        <div class="pl-card-panel">
+          <span class="pl-card-label">2 специальности</span>
+          <div class="pl-chips">
+            <span class="chip">Дизайн (по&nbsp;отраслям)</span>
+            <span class="chip">Социально-культурная деятельность</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Specialties -->
+<section id="specs" class="specs">
+  <div class="container">
+    <span class="sec-pill block">03 — Специальности</span>
+    <h2 class="specs-title">10 программ <em>обучения</em></h2>
+
+    <div class="acc">
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="acc-num">01</span>
+          <span class="acc-name">Мехатроника и робототехника</span>
+          <span class="acc-tag">Инжиниринг</span>
+          <span class="acc-toggle" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <div class="acc-body" aria-hidden="true">
+          <div class="acc-body-inner">
+            <div class="acc-grid">
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">О профессии</span>
+                <p>Проектирование, программирование и обслуживание роботов, мехатронных систем и автоматизированных производств.</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Срок обучения</span>
+                <p>3 года 10 мес</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Форма</span>
+                <p>Очная · Бюджет</p>
+              </div>
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">Кем работать</span>
+                <p>Инженер-робототехник, наладчик мехатроники, специалист АСУТП</p>
+              </div>
+            </div>
+            <a href="#" class="acc-btn">Подать заявление <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="acc-num">02</span>
+          <span class="acc-name">Компьютерные системы и комплексы</span>
+          <span class="acc-tag">IT</span>
+          <span class="acc-toggle" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <div class="acc-body" aria-hidden="true">
+          <div class="acc-body-inner">
+            <div class="acc-grid">
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">О профессии</span>
+                <p>Разработка, поддержка и администрирование компьютерных систем и цифровой инфраструктуры.</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Срок обучения</span>
+                <p>3 года 10 мес</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Форма</span>
+                <p>Очная · Бюджет</p>
+              </div>
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">Кем работать</span>
+                <p>Системный администратор, специалист поддержки, инженер сетей</p>
+              </div>
+            </div>
+            <a href="#" class="acc-btn">Подать заявление <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="acc-num">03</span>
+          <span class="acc-name">Технология машиностроения</span>
+          <span class="acc-tag">Инжиниринг</span>
+          <span class="acc-toggle" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <div class="acc-body" aria-hidden="true">
+          <div class="acc-body-inner">
+            <div class="acc-grid">
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">О профессии</span>
+                <p>Проектирование технологических процессов обработки металла и программирование станков.</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Срок обучения</span>
+                <p>3 года 10 мес</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Форма</span>
+                <p>Очная · Бюджет</p>
+              </div>
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">Кем работать</span>
+                <p>Инженер-технолог, конструктор, мастер участка</p>
+              </div>
+            </div>
+            <a href="#" class="acc-btn">Подать заявление <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="acc-num">04</span>
+          <span class="acc-name">Дизайн (по отраслям)</span>
+          <span class="acc-tag">Креатив</span>
+          <span class="acc-toggle" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <div class="acc-body" aria-hidden="true">
+          <div class="acc-body-inner">
+            <div class="acc-grid">
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">О профессии</span>
+                <p>Графический, промышленный и цифровой дизайн, визуальные коммуникации в разных отраслях.</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Срок обучения</span>
+                <p>3 года 10 мес</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Форма</span>
+                <p>Очная · Бюджет</p>
+              </div>
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">Кем работать</span>
+                <p>Графический дизайнер, UX/UI-специалист, арт-директор</p>
+              </div>
+            </div>
+            <a href="#" class="acc-btn">Подать заявление <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="acc-num">05</span>
+          <span class="acc-name">Монтаж и ремонт электронных приборов</span>
+          <span class="acc-tag">Инжиниринг</span>
+          <span class="acc-toggle" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <div class="acc-body" aria-hidden="true">
+          <div class="acc-body-inner">
+            <div class="acc-grid">
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">О профессии</span>
+                <p>Обслуживание, диагностика и ремонт электронной аппаратуры и контрольно-измерительных приборов.</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Срок обучения</span>
+                <p>2 года 10 мес</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Форма</span>
+                <p>Очная · Бюджет</p>
+              </div>
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">Кем работать</span>
+                <p>Электронщик, инженер по обслуживанию, мастер сервисного центра</p>
+              </div>
+            </div>
+            <a href="#" class="acc-btn">Подать заявление <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="acc-num">06</span>
+          <span class="acc-name">Социально-культурная деятельность (Event)</span>
+          <span class="acc-tag">Креатив</span>
+          <span class="acc-toggle" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <div class="acc-body" aria-hidden="true">
+          <div class="acc-body-inner">
+            <div class="acc-grid">
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">О профессии</span>
+                <p>Организация мероприятий, культурных проектов и event-индустрии: от концепции до реализации.</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Срок обучения</span>
+                <p>2 года 10 мес</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Форма</span>
+                <p>Очная · Бюджет</p>
+              </div>
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">Кем работать</span>
+                <p>Event-менеджер, продюсер проектов, организатор мероприятий</p>
+              </div>
+            </div>
+            <a href="#" class="acc-btn">Подать заявление <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="acc-num">07</span>
+          <span class="acc-name">Оператор-наладчик станков с ЧПУ</span>
+          <span class="acc-tag">Инжиниринг</span>
+          <span class="acc-toggle" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <div class="acc-body" aria-hidden="true">
+          <div class="acc-body-inner">
+            <div class="acc-grid">
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">О профессии</span>
+                <p>Программирование и наладка станков с числовым программным управлением.</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Срок обучения</span>
+                <p>2 года 10 мес</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Форма</span>
+                <p>Очная · Бюджет</p>
+              </div>
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">Кем работать</span>
+                <p>Оператор ЧПУ, наладчик, программист станков с ЧПУ</p>
+              </div>
+            </div>
+            <a href="#" class="acc-btn">Подать заявление <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="acc-num">08</span>
+          <span class="acc-name">Управление качеством продукции</span>
+          <span class="acc-tag">Инжиниринг</span>
+          <span class="acc-toggle" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <div class="acc-body" aria-hidden="true">
+          <div class="acc-body-inner">
+            <div class="acc-grid">
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">О профессии</span>
+                <p>Контроль качества продукции, процессов и услуг на производственных предприятиях.</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Срок обучения</span>
+                <p>3 года 10 мес</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Форма</span>
+                <p>Очная · Бюджет</p>
+              </div>
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">Кем работать</span>
+                <p>Менеджер качества, инспектор ОТК, аудитор СМК</p>
+              </div>
+            </div>
+            <a href="#" class="acc-btn">Подать заявление <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="acc-num">09</span>
+          <span class="acc-name">Монтажник радиоэлектронной аппаратуры</span>
+          <span class="acc-tag">Инжиниринг</span>
+          <span class="acc-toggle" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <div class="acc-body" aria-hidden="true">
+          <div class="acc-body-inner">
+            <div class="acc-grid">
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">О профессии</span>
+                <p>Сборка, монтаж, регулировка и проверка радиоэлектронной аппаратуры и приборов.</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Срок обучения</span>
+                <p>2 года 10 мес</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Форма</span>
+                <p>Очная · Бюджет</p>
+              </div>
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">Кем работать</span>
+                <p>Монтажник РЭА, сборщик электроники, регулировщик</p>
+              </div>
+            </div>
+            <a href="#" class="acc-btn">Подать заявление <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="acc-num">10</span>
+          <span class="acc-name">Мастер слесарных работ</span>
+          <span class="acc-tag">Инжиниринг</span>
+          <span class="acc-toggle" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <div class="acc-body" aria-hidden="true">
+          <div class="acc-body-inner">
+            <div class="acc-grid">
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">О профессии</span>
+                <p>Слесарная обработка металла, изготовление и сборка деталей, точные ручные операции.</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Срок обучения</span>
+                <p>1 год 10 мес</p>
+              </div>
+              <div class="acc-cell">
+                <span class="acc-label">Форма</span>
+                <p>Очная · Бюджет</p>
+              </div>
+              <div class="acc-cell acc-cell-wide">
+                <span class="acc-label">Кем работать</span>
+                <p>Слесарь-сборщик, слесарь-ремонтник, слесарь-инструментальщик</p>
+              </div>
+            </div>
+            <a href="#" class="acc-btn">Подать заявление <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quiz CTA -->
+<section id="quiz" class="quiz">
+  <video class="quiz-bg-video" muted playsinline preload="auto" aria-hidden="true">
+    <source src="assets/%D1%82%D0%B5%D1%81%D1%82.mp4" type="video/mp4">
+  </video>
+  <div class="quiz-bg-overlay" aria-hidden="true"></div>
+  <div class="container quiz-intro">
+    <span class="quiz-pill">Тест на профессию</span>
+    <h2 class="quiz-title">Не знаешь, что выбрать? <em>Мы&nbsp;подскажем.</em></h2>
+    <p class="quiz-lead">10 вопросов — и узнаешь, какая из 10 специальностей КРМК подходит тебе больше всего.</p>
+    <button class="btn btn-primary quiz-open" id="quizOpen">Пройти тест <span aria-hidden="true">→</span></button>
+  </div>
+</section>
+
+<!-- Quiz Modal -->
+<div class="quiz-modal" id="quizModal" aria-hidden="true">
+  <div class="quiz-modal-bg" data-close></div>
+  <div class="quiz-modal-card" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+    <button class="quiz-close" data-close aria-label="Закрыть тест">✕</button>
+
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar"><span></span></div>
+      <div class="quiz-progress-text">Вопрос 1 из 10</div>
+    </div>
+
+    <div class="quiz-steps">
+      <!-- Q1 -->
+      <div class="quiz-step active" data-step="0">
+        <h3 id="quizTitle">Что тебе ближе всего?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"3":2,"7":1,"10":2}'>Работать руками с металлом</button>
+          <button class="quiz-option" data-score='{"5":2,"9":2}'>Паять и собирать электронику</button>
+          <button class="quiz-option" data-score='{"2":2,"1":1}'>Программировать</button>
+          <button class="quiz-option" data-score='{"4":2,"6":1}'>Создавать визуальный контент</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-step" data-step="1">
+        <h3>Какой школьный предмет тебе нравится больше?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"1":1,"3":1,"7":1,"8":1}'>Физика и математика</button>
+          <button class="quiz-option" data-score='{"2":2,"1":1}'>Информатика</button>
+          <button class="quiz-option" data-score='{"4":2,"6":1}'>Изобразительное искусство</button>
+          <button class="quiz-option" data-score='{"3":1,"7":1,"9":1,"10":2}'>Технология и труд</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-step" data-step="2">
+        <h3>Что вдохновляет в работе?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"8":2,"1":1,"5":1}'>Точность и стандарты</button>
+          <button class="quiz-option" data-score='{"4":2,"6":2}'>Творчество и свобода</button>
+          <button class="quiz-option" data-score='{"1":2,"2":2,"5":1}'>Технологии и инновации</button>
+          <button class="quiz-option" data-score='{"3":2,"7":1,"10":1}'>Готовый продукт</button>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="quiz-step" data-step="3">
+        <h3>Где ты хочешь работать?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"3":2,"7":2,"10":1}'>В цеху, у станка</button>
+          <button class="quiz-option" data-score='{"5":2,"8":1,"9":2}'>В лаборатории с приборами</button>
+          <button class="quiz-option" data-score='{"2":2,"4":1,"1":1}'>За компьютером</button>
+          <button class="quiz-option" data-score='{"6":2,"8":1}'>С людьми, в команде</button>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="quiz-step" data-step="4">
+        <h3>Как ты решаешь сложные задачи?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"3":2,"7":1,"10":1}'>Иду шаг за шагом по чертежу</button>
+          <button class="quiz-option" data-score='{"5":2,"9":2}'>Использую измерительные приборы</button>
+          <button class="quiz-option" data-score='{"2":2,"1":1}'>Пишу алгоритм или код</button>
+          <button class="quiz-option" data-score='{"4":2,"6":2}'>Ищу креативное решение</button>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="quiz-step" data-step="5">
+        <h3>Какое хобби тебе ближе?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"1":2,"3":1,"7":1,"10":1}'>Конструкторы и моделизм</button>
+          <button class="quiz-option" data-score='{"5":2,"9":2}'>Радиолюбительство</button>
+          <button class="quiz-option" data-score='{"2":2}'>Программирование и игры</button>
+          <button class="quiz-option" data-score='{"4":2}'>Рисование, фото, видеомонтаж</button>
+          <button class="quiz-option" data-score='{"6":2,"8":1}'>Организация мероприятий</button>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="quiz-step" data-step="6">
+        <h3>Чем хочется заниматься в будущем?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"1":2,"7":1}'>Создавать роботов и автоматизацию</button>
+          <button class="quiz-option" data-score='{"5":2,"9":2}'>Разрабатывать электронные устройства</button>
+          <button class="quiz-option" data-score='{"2":2}'>Создавать программы и системы</button>
+          <button class="quiz-option" data-score='{"4":2}'>Делать дизайн и контент</button>
+          <button class="quiz-option" data-score='{"6":1,"8":2}'>Управлять проектами</button>
+          <button class="quiz-option" data-score='{"3":2,"10":2}'>Обрабатывать металл, делать детали</button>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="quiz-step" data-step="7">
+        <h3>Что для тебя важно в профессии?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"1":1,"2":1,"3":1,"7":1,"8":1}'>Стабильность и востребованность</button>
+          <button class="quiz-option" data-score='{"1":1,"2":2,"5":1}'>Постоянное развитие</button>
+          <button class="quiz-option" data-score='{"4":2,"6":2}'>Творческое самовыражение</button>
+          <button class="quiz-option" data-score='{"3":1,"5":1,"7":1,"9":1,"10":2}'>Работа руками</button>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="quiz-step" data-step="8">
+        <h3>Что описывает тебя лучше всего?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"2":1,"5":1,"8":2,"9":1}'>Логика и точность</button>
+          <button class="quiz-option" data-score='{"3":2,"7":1,"10":2}'>Любовь к инструментам</button>
+          <button class="quiz-option" data-score='{"5":2,"9":2}'>Интерес к схемам и электронике</button>
+          <button class="quiz-option" data-score='{"4":2}'>Чувство эстетики</button>
+          <button class="quiz-option" data-score='{"6":2}'>Общение и события</button>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="quiz-step" data-step="9">
+        <h3>Какая профессия привлекает интуитивно?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"1":3}'>Робототехник</button>
+          <button class="quiz-option" data-score='{"2":3}'>IT-специалист</button>
+          <button class="quiz-option" data-score='{"3":3}'>Технолог-машиностроитель</button>
+          <button class="quiz-option" data-score='{"4":3}'>Дизайнер</button>
+          <button class="quiz-option" data-score='{"5":3,"9":1}'>Электронщик</button>
+          <button class="quiz-option" data-score='{"6":3}'>Event-менеджер</button>
+          <button class="quiz-option" data-score='{"7":3}'>Оператор ЧПУ</button>
+          <button class="quiz-option" data-score='{"8":3}'>Менеджер качества</button>
+          <button class="quiz-option" data-score='{"9":3}'>Монтажник радиоэлектроники</button>
+          <button class="quiz-option" data-score='{"10":3}'>Слесарь</button>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="quiz-step quiz-result" data-step="result">
+        <span class="result-eyebrow">Твоя специальность</span>
+        <h3 class="result-title">—</h3>
+        <p class="result-desc">—</p>
+        <div class="result-actions">
+          <a href="#specs" class="btn btn-primary" data-close>Все программы</a>
+          <button class="btn btn-ghost" data-restart>Пройти заново</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Why us -->
+<section id="why" class="why">
+  <div class="container">
+    <span class="sec-pill block light">04 — Почему КРМК</span>
+    <h2 class="why-title">5 причин выбрать <em>нас</em></h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h3>Без ЕГЭ и ГИА</h3>
+        <p>Поступление по среднему баллу аттестата. Просто и предсказуемо.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h3>Бюджетные места</h3>
+        <p>Обучение за счёт государства — реальная экономия на старте.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h3>Стипендии</h3>
+        <p>Поддержка студентов — стипендия каждый месяц.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">04</div>
+        <h3>Отсрочка от армии</h3>
+        <p>На время обучения служба в армии откладывается.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">05</div>
+        <h3>В ВУЗ — без ЕГЭ</h3>
+        <p>Поступление в вузы по упрощённой схеме после колледжа.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- People -->
+<section class="people">
+  <div class="container">
+    <header class="sec-head">
+      <span class="sec-pill">05 — Команда</span>
+      <h2 class="sec-title">Люди <em>колледжа</em></h2>
+      <p class="sec-lead">Студенты, преподаватели и сообщество — каждый на своём месте.</p>
+    </header>
+    <div class="people-grid">
+      <div class="person-card">
+        <img src="assets/студент.jpg" alt="Студент">
+        <div class="person-info">
+          <span>Студенты</span>
+          <h3>Творцы и инженеры</h3>
+        </div>
+      </div>
+      <div class="person-card">
+        <img src="assets/преподаватель.jpg" alt="Преподаватель">
+        <div class="person-info">
+          <span>Преподаватели</span>
+          <h3>Практики из индустрии</h3>
+        </div>
+      </div>
+      <div class="person-card">
+        <img src="assets/adb3799d90dc2cc56f1674df6935c76a.jpg" alt="Команда">
+        <div class="person-info">
+          <span>Сообщество</span>
+          <h3>Технопарк нового поколения</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Stack (Dime-style scroll wipe) -->
+<section id="apply" class="block-stack">
+
+  <!-- Panel 0: Начни обучение (top, z-index 3, clips first) -->
+  <div class="stack-wrapper" style="z-index:3">
+    <div class="stack-item">
+      <img class="stack-bg stack-bg-first" src="assets/Начни обучение.png" alt="Начни обучение осенью 2026">
+      <div class="stack-overlay"></div>
+      <div class="stack-content">
+        <span class="stack-eyebrow">01 — Приём 2026</span>
+        <h2 class="stack-title">Начни обучение<br><em>осенью 2026</em></h2>
+        <p class="stack-desc">Приёмная комиссия открыта. Поступление без ЕГЭ, бюджетные места по 10 направлениям.</p>
+        <div class="stack-actions">
+          <a href="#contacts" class="btn btn-primary">Связаться с приёмной</a>
+          <a href="#specs" class="btn btn-ghost">Список программ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel 1: Мастерские (z-index 2) -->
+  <div class="stack-wrapper" style="z-index:2">
+    <div class="stack-item">
+      <img class="stack-bg" src="assets/практика.jpg" alt="Современные мастерские">
+      <div class="stack-overlay"></div>
+      <div class="stack-content">
+        <span class="stack-eyebrow">02 — Мастерские</span>
+        <h2 class="stack-title">Учись на<br><em>современном</em> оборудовании</h2>
+        <p class="stack-desc">Станки с ЧПУ, паяльные линии и цифровая студия — как на реальном производстве.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel 2: Сообщество (z-index 1, последний — остаётся) -->
+  <div class="stack-wrapper" style="z-index:1">
+    <div class="stack-item">
+      <img class="stack-bg stack-bg-last" src="assets/463da641b28240a0c36e88256092b5f4.jpg" alt="Сообщество КРМК">
+      <div class="stack-overlay"></div>
+      <div class="stack-content">
+        <span class="stack-eyebrow">03 — Сообщество</span>
+        <h2 class="stack-title">Стань частью<br><em>технопарка</em></h2>
+        <p class="stack-desc">Студенты, преподаватели-практики и партнёры индустрии — общий путь в профессию.</p>
+        <div class="stack-actions">
+          <a href="#contacts" class="btn btn-primary">Записаться на консультацию</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer id="contacts" class="footer">
+  <div class="container">
+
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo-text">КРМК</a>
+        <p class="footer-tag">Технопарк цифровой трансформации традиционного инжиниринга и креативной экономики.</p>
+      </div>
+      <div class="fc-card">
+        <span class="fc-label">Адрес</span>
+        <p class="fc-value">г. Казань,<br>ул. Красного Пожарника, 1а</p>
+      </div>
+      <div class="fc-card">
+        <span class="fc-label">Телефон</span>
+        <p class="fc-value"><a href="tel:+78432970062">+7 (843) 297-00-62</a></p>
+      </div>
+      <div class="fc-card">
+        <span class="fc-label">Email</span>
+        <p class="fc-value"><a href="mailto:postupi-vkrmk@yandex.ru">postupi-vkrmk@yandex.ru</a></p>
+      </div>
+    </div>
+
+    <div class="footer-grid">
+      <div>
+        <span class="footer-h">Приёмная комиссия</span>
+        <a href="#">Пн – Пт · 09:00 — 17:00</a>
+      </div>
+      <div>
+        <span class="footer-h">Колледж</span>
+        <a href="#about">О нас</a>
+        <a href="#why">Почему мы</a>
+        <a href="#apply">Поступление</a>
+      </div>
+      <div>
+        <span class="footer-h">Обучение</span>
+        <a href="#specs">Специальности</a>
+        <a href="#">Расписание</a>
+        <a href="#">Документы</a>
+      </div>
+      <div>
+        <span class="footer-h">Соцсети</span>
+        <a href="#">ВКонтакте</a>
+        <a href="#">Telegram</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 КРМК. Казань.</span>
+      <span>ул. Красного Пожарника, 1а</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
