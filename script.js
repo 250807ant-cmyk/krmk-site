@@ -1,3 +1,28 @@
+// === Rainbow letters — split text into colored spans (cycles 4 brand colors) ===
+(function(){
+  const els = document.querySelectorAll('.rainbow');
+  els.forEach(el => {
+    if(el.dataset.rainbowed === '1') return;
+    const text = el.textContent;
+    const frag = document.createDocumentFragment();
+    let i = 0;
+    for(const ch of text){
+      if(ch.trim() === ''){
+        frag.appendChild(document.createTextNode(ch));
+      } else {
+        const span = document.createElement('span');
+        span.className = 'l l-' + ((i % 4) + 1);
+        span.textContent = ch;
+        frag.appendChild(span);
+        i++;
+      }
+    }
+    el.textContent = '';
+    el.appendChild(frag);
+    el.dataset.rainbowed = '1';
+  });
+})();
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
@@ -186,9 +211,28 @@ window.addEventListener('scroll',()=>{
   function setOpen(item, open){
     const body = item.querySelector('.acc-body');
     const head = item.querySelector('.acc-head');
+    const slot = item.querySelector('.acc-video');
+    const vid  = item.dataset.video;
+
     item.classList.toggle('is-open', open);
     head.setAttribute('aria-expanded', open ? 'true' : 'false');
     body.setAttribute('aria-hidden', open ? 'false' : 'true');
+
+    // inject / remove embedded video
+    if(slot){
+      if(open && vid && !slot.querySelector('iframe')){
+        slot.innerHTML = `<iframe src="https://rutube.ru/play/embed/${vid}/?autoplay=1&mute=1" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>`;
+      } else if(!open){
+        slot.innerHTML = '';
+      }
+    }
+
+    // also hide the floating hover preview when we open a row
+    if(open){
+      const hp = document.querySelector('.video-preview');
+      if(hp) hp.classList.remove('is-visible');
+    }
+
     if(open){
       body.style.maxHeight = body.scrollHeight + 'px';
     } else {
@@ -344,6 +388,9 @@ window.addEventListener('scroll',()=>{
     const spec = SPECS[maxId] || SPECS[1];
     titleEl.textContent = spec.name;
     descEl.textContent  = spec.desc;
+    // pass the resulting specialty to the consult modal trigger
+    const consultBtn = result.querySelector('[data-result-consult]');
+    if(consultBtn) consultBtn.dataset.consult = spec.name;
   }
 
   // Events
@@ -352,6 +399,9 @@ window.addEventListener('scroll',()=>{
     el.addEventListener('click', close);
   });
   modal.querySelector('[data-restart]')?.addEventListener('click', reset);
+  // When user clicks the "Оставить заявку" CTA inside the result step,
+  // close the quiz first (consult modal is opened by the global handler).
+  modal.querySelector('[data-result-consult]')?.addEventListener('click', close);
 
   // Esc to close
   document.addEventListener('keydown', e => {
@@ -370,4 +420,112 @@ window.addEventListener('scroll',()=>{
       showStep(current);
     });
   });
+})();
+
+// === Consultation modal ===
+(function(){
+  const modal = document.getElementById('consultModal');
+  if(!modal) return;
+  const card  = modal.querySelector('.consult-modal-card');
+  const form  = modal.querySelector('#consultForm');
+  const views = modal.querySelectorAll('[data-consult-view]');
+
+  function setView(name){
+    views.forEach(v => {
+      v.hidden = (v.dataset.consultView !== name);
+    });
+  }
+
+  function open(prefSpec){
+    setView('form');
+    if(form){
+      form.reset();
+      if(prefSpec){
+        const sel = form.elements['specialty'];
+        if(sel){
+          for(const opt of sel.options){
+            if(opt.value === prefSpec || opt.textContent.trim() === prefSpec){
+              sel.value = opt.value || opt.textContent;
+              break;
+            }
+          }
+        }
+      }
+    }
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    // focus first input
+    setTimeout(() => {
+      const firstInput = form?.querySelector('input[name="name"]');
+      if(firstInput) firstInput.focus();
+    }, 400);
+  }
+  function close(){
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  // Open via [data-consult] on any element across the page
+  document.addEventListener('click', e => {
+    const trigger = e.target.closest('[data-consult]');
+    if(trigger){
+      e.preventDefault();
+      const spec = trigger.dataset.consult || '';
+      open(spec);
+    }
+  });
+
+  // Close via X / backdrop / esc / "Закрыть"
+  modal.querySelectorAll('[data-consult-close]').forEach(el => {
+    el.addEventListener('click', close);
+  });
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && modal.classList.contains('is-open')) close();
+  });
+
+  // Phone formatting: keep only digits, render as +7 (XXX) XXX-XX-XX
+  const phoneInput = form?.querySelector('input[name="phone"]');
+  if(phoneInput){
+    phoneInput.addEventListener('input', () => {
+      let digits = phoneInput.value.replace(/\D/g, '');
+      if(digits.startsWith('8')) digits = '7' + digits.slice(1);
+      if(!digits.startsWith('7')) digits = '7' + digits;
+      digits = digits.slice(0, 11);
+      const parts = [];
+      if(digits.length > 1) parts.push('+7 (' + digits.slice(1, 4));
+      if(digits.length >= 5) parts[0] += ') ' + digits.slice(4, 7);
+      if(digits.length >= 8) parts[0] += '-' + digits.slice(7, 9);
+      if(digits.length >= 10) parts[0] += '-' + digits.slice(9, 11);
+      phoneInput.value = parts.join('') || '+7 ';
+    });
+  }
+
+  // Submit
+  if(form){
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      // basic validation
+      let ok = true;
+      ['name','phone'].forEach(n => {
+        const el = form.elements[n];
+        if(!el.value.trim() || (n === 'phone' && el.value.replace(/\D/g,'').length < 11)){
+          el.classList.add('is-error');
+          ok = false;
+        } else {
+          el.classList.remove('is-error');
+        }
+      });
+      if(!form.elements['consent'].checked) ok = false;
+      if(!ok) return;
+      // mock submission — show success
+      setView('success');
+    });
+
+    // clear error on input
+    form.querySelectorAll('input, textarea').forEach(el => {
+      el.addEventListener('input', () => el.classList.remove('is-error'));
+    });
+  }
 })();
