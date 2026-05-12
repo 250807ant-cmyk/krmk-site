@@ -648,9 +648,9 @@ window.addEventListener('scroll',()=>{
   // Cache: [{el, speed, axis: 'y' | 'x', baseScale}]
   const items = [];
 
-  // Person card images — vertical parallax via CSS variable (so hover-zoom can co-exist)
-  document.querySelectorAll('.person-card img').forEach(img => {
-    items.push({ el: img, container: img.closest('.person-card'), speed: 70, useVar: true });
+  // Person card photo wrappers — parallax via transform (img zoom handled by CSS hover)
+  document.querySelectorAll('.person-photo').forEach(wrap => {
+    items.push({ el: wrap, container: wrap.closest('.person-card'), speed: 70 });
   });
   // Footer map pin — vertical drift
   const pin = document.querySelector('.footer-map-pin');
@@ -668,16 +668,13 @@ window.addEventListener('scroll',()=>{
   let ticking = false;
   function update(){
     const vh = window.innerHeight;
-    items.forEach(({ el, container, speed, isVideo, useVar }) => {
+    items.forEach(({ el, container, speed, isVideo }) => {
       const rect = (container || el).getBoundingClientRect();
       if(rect.bottom < -100 || rect.top > vh + 100) return;
       const center = rect.top + rect.height / 2;
       const offset = (center - vh / 2) / vh; // ~ -1..1
       const t = -offset * speed;
-      if(useVar){
-        // Person card images: set CSS variable, transform itself is in CSS
-        el.style.setProperty('--py', t + 'px');
-      } else if(isVideo){
+      if(isVideo){
         el.style.transform = `translateY(${t}px) scale(1.1)`;
       } else {
         el.style.transform = `translateY(${t}px)`;
