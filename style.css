@@ -881,7 +881,9 @@ section{padding:120px 0}
   position:absolute;inset:0;z-index:2;
   background:
     linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.15) 40%, rgba(0,0,0,.7) 100%);
+  pointer-events:none;
 }
+.stack-bg{pointer-events:none}
 .stack-content{
   position:relative;z-index:3;
   width:100%;
