@@ -118,9 +118,9 @@ em{font-style:italic;font-family:'Manrope',serif;font-weight:500}
   .nav-inner > *{height:48px}
   .nav-logo{width:48px}
 }
-@media (max-width:420px){
+@media (max-width:600px){
   .nav-cta span{display:none}
-  .nav-cta{padding:0 16px}
+  .nav-cta{padding:0 14px;gap:0}
 }
 
 /* === Hero === */
@@ -1604,16 +1604,23 @@ section{padding:120px 0}
   .container{padding:0 20px}
   section{padding:80px 0}
 
-  /* Hero — smaller everything */
+  /* Hero — smaller everything + centered content on mobile */
   .hero{
     min-height:auto;
     padding:120px 0 60px;
+    text-align:center;
   }
+  .hero-content{align-items:center;display:flex;flex-direction:column}
   .hero-title{font-size:clamp(36px,9vw,64px);line-height:1.04;margin-bottom:20px}
   .hero-sub{font-size:15px;margin-bottom:32px;max-width:none}
-  .hero-cta{gap:10px;margin-bottom:48px}
+  .hero-cta{gap:10px;margin-bottom:48px;justify-content:center;flex-wrap:wrap}
   .hero-cta .btn{padding:13px 22px;font-size:14px}
-  .hero-stats{gap:32px}
+  .hero-stats{
+    gap:24px;
+    justify-content:center;
+    width:100%;
+  }
+  .hero-stats > div{align-items:center;text-align:center}
   .hero-stats b{font-size:28px}
   .hero-stats span{font-size:11px}
   .hero-eyebrow{font-size:11px;margin-bottom:20px}
