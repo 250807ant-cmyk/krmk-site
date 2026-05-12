@@ -215,163 +215,6 @@
 </section>
 
 <!-- Quiz CTA -->
-<section id="quiz" class="quiz">
-  <div class="quiz-bg-gradient" aria-hidden="true"></div>
-  <div class="container quiz-intro">
-    <span class="quiz-pill">Тест на профессию</span>
-    <h2 class="quiz-title">Не знаешь, что выбрать? <em>Мы&nbsp;подскажем.</em></h2>
-    <p class="quiz-lead">10 вопросов — и узнаешь, какая из 10 специальностей КРМК подходит тебе больше всего.</p>
-    <button class="btn btn-primary quiz-open" id="quizOpen">Пройти тест <span aria-hidden="true">→</span></button>
-  </div>
-</section>
-
-<!-- Quiz Modal -->
-<div class="quiz-modal" id="quizModal" aria-hidden="true">
-  <div class="quiz-modal-bg" data-close></div>
-  <div class="quiz-modal-card" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
-    <button class="quiz-close" data-close aria-label="Закрыть тест">✕</button>
-
-    <div class="quiz-progress">
-      <div class="quiz-progress-bar"><span></span></div>
-      <div class="quiz-progress-text">Вопрос 1 из 10</div>
-    </div>
-
-    <div class="quiz-steps">
-      <!-- Q1 -->
-      <div class="quiz-step active" data-step="0">
-        <h3 id="quizTitle">Что тебе ближе всего?</h3>
-        <div class="quiz-options">
-          <button class="quiz-option" data-score='{"3":2,"7":1,"10":2}'>Работать руками с металлом</button>
-          <button class="quiz-option" data-score='{"5":2,"9":2}'>Паять и собирать электронику</button>
-          <button class="quiz-option" data-score='{"2":2,"1":1}'>Программировать</button>
-          <button class="quiz-option" data-score='{"4":2,"6":1}'>Создавать визуальный контент</button>
-        </div>
-      </div>
-
-      <!-- Q2 -->
-      <div class="quiz-step" data-step="1">
-        <h3>Какой школьный предмет тебе нравится больше?</h3>
-        <div class="quiz-options">
-          <button class="quiz-option" data-score='{"1":1,"3":1,"7":1,"8":1}'>Физика и математика</button>
-          <button class="quiz-option" data-score='{"2":2,"1":1}'>Информатика</button>
-          <button class="quiz-option" data-score='{"4":2,"6":1}'>Изобразительное искусство</button>
-          <button class="quiz-option" data-score='{"3":1,"7":1,"9":1,"10":2}'>Технология и труд</button>
-        </div>
-      </div>
-
-      <!-- Q3 -->
-      <div class="quiz-step" data-step="2">
-        <h3>Что вдохновляет в работе?</h3>
-        <div class="quiz-options">
-          <button class="quiz-option" data-score='{"8":2,"1":1,"5":1}'>Точность и стандарты</button>
-          <button class="quiz-option" data-score='{"4":2,"6":2}'>Творчество и свобода</button>
-          <button class="quiz-option" data-score='{"1":2,"2":2,"5":1}'>Технологии и инновации</button>
-          <button class="quiz-option" data-score='{"3":2,"7":1,"10":1}'>Готовый продукт</button>
-        </div>
-      </div>
-
-      <!-- Q4 -->
-      <div class="quiz-step" data-step="3">
-        <h3>Где ты хочешь работать?</h3>
-        <div class="quiz-options">
-          <button class="quiz-option" data-score='{"3":2,"7":2,"10":1}'>В цеху, у станка</button>
-          <button class="quiz-option" data-score='{"5":2,"8":1,"9":2}'>В лаборатории с приборами</button>
-          <button class="quiz-option" data-score='{"2":2,"4":1,"1":1}'>За компьютером</button>
-          <button class="quiz-option" data-score='{"6":2,"8":1}'>С людьми, в команде</button>
-        </div>
-      </div>
-
-      <!-- Q5 -->
-      <div class="quiz-step" data-step="4">
-        <h3>Как ты решаешь сложные задачи?</h3>
-        <div class="quiz-options">
-          <button class="quiz-option" data-score='{"3":2,"7":1,"10":1}'>Иду шаг за шагом по чертежу</button>
-          <button class="quiz-option" data-score='{"5":2,"9":2}'>Использую измерительные приборы</button>
-          <button class="quiz-option" data-score='{"2":2,"1":1}'>Пишу алгоритм или код</button>
-          <button class="quiz-option" data-score='{"4":2,"6":2}'>Ищу креативное решение</button>
-        </div>
-      </div>
-
-      <!-- Q6 -->
-      <div class="quiz-step" data-step="5">
-        <h3>Какое хобби тебе ближе?</h3>
-        <div class="quiz-options">
-          <button class="quiz-option" data-score='{"1":2,"3":1,"7":1,"10":1}'>Конструкторы и моделизм</button>
-          <button class="quiz-option" data-score='{"5":2,"9":2}'>Радиолюбительство</button>
-          <button class="quiz-option" data-score='{"2":2}'>Программирование и игры</button>
-          <button class="quiz-option" data-score='{"4":2}'>Рисование, фото, видеомонтаж</button>
-          <button class="quiz-option" data-score='{"6":2,"8":1}'>Организация мероприятий</button>
-        </div>
-      </div>
-
-      <!-- Q7 -->
-      <div class="quiz-step" data-step="6">
-        <h3>Чем хочется заниматься в будущем?</h3>
-        <div class="quiz-options">
-          <button class="quiz-option" data-score='{"1":2,"7":1}'>Создавать роботов и автоматизацию</button>
-          <button class="quiz-option" data-score='{"5":2,"9":2}'>Разрабатывать электронные устройства</button>
-          <button class="quiz-option" data-score='{"2":2}'>Создавать программы и системы</button>
-          <button class="quiz-option" data-score='{"4":2}'>Делать дизайн и контент</button>
-          <button class="quiz-option" data-score='{"6":1,"8":2}'>Управлять проектами</button>
-          <button class="quiz-option" data-score='{"3":2,"10":2}'>Обрабатывать металл, делать детали</button>
-        </div>
-      </div>
-
-      <!-- Q8 -->
-      <div class="quiz-step" data-step="7">
-        <h3>Что для тебя важно в профессии?</h3>
-        <div class="quiz-options">
-          <button class="quiz-option" data-score='{"1":1,"2":1,"3":1,"7":1,"8":1}'>Стабильность и востребованность</button>
-          <button class="quiz-option" data-score='{"1":1,"2":2,"5":1}'>Постоянное развитие</button>
-          <button class="quiz-option" data-score='{"4":2,"6":2}'>Творческое самовыражение</button>
-          <button class="quiz-option" data-score='{"3":1,"5":1,"7":1,"9":1,"10":2}'>Работа руками</button>
-        </div>
-      </div>
-
-      <!-- Q9 -->
-      <div class="quiz-step" data-step="8">
-        <h3>Что описывает тебя лучше всего?</h3>
-        <div class="quiz-options">
-          <button class="quiz-option" data-score='{"2":1,"5":1,"8":2,"9":1}'>Логика и точность</button>
-          <button class="quiz-option" data-score='{"3":2,"7":1,"10":2}'>Любовь к инструментам</button>
-          <button class="quiz-option" data-score='{"5":2,"9":2}'>Интерес к схемам и электронике</button>
-          <button class="quiz-option" data-score='{"4":2}'>Чувство эстетики</button>
-          <button class="quiz-option" data-score='{"6":2}'>Общение и события</button>
-        </div>
-      </div>
-
-      <!-- Q10 -->
-      <div class="quiz-step" data-step="9">
-        <h3>Какая профессия привлекает интуитивно?</h3>
-        <div class="quiz-options">
-          <button class="quiz-option" data-score='{"1":3}'>Робототехник</button>
-          <button class="quiz-option" data-score='{"2":3}'>IT-специалист</button>
-          <button class="quiz-option" data-score='{"3":3}'>Технолог-машиностроитель</button>
-          <button class="quiz-option" data-score='{"4":3}'>Дизайнер</button>
-          <button class="quiz-option" data-score='{"5":3,"9":1}'>Электронщик</button>
-          <button class="quiz-option" data-score='{"6":3}'>Event-менеджер</button>
-          <button class="quiz-option" data-score='{"7":3}'>Оператор ЧПУ</button>
-          <button class="quiz-option" data-score='{"8":3}'>Менеджер качества</button>
-          <button class="quiz-option" data-score='{"9":3}'>Монтажник радиоэлектроники</button>
-          <button class="quiz-option" data-score='{"10":3}'>Слесарь</button>
-        </div>
-      </div>
-
-      <!-- Result -->
-      <div class="quiz-step quiz-result" data-step="result">
-        <span class="result-eyebrow">Твоя специальность</span>
-        <h3 class="result-title">—</h3>
-        <p class="result-desc">—</p>
-        <div class="result-actions">
-          <button type="button" class="btn btn-primary" data-consult data-result-consult>Оставить заявку</button>
-          <button type="button" class="btn btn-ghost" data-restart>Пройти заново</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Why us -->
 <section id="specs" class="specs">
   <div class="container">
     <span class="sec-pill block">03 — Специальности</span>
@@ -712,6 +555,163 @@
 </section>
 
 <!-- Quiz CTA -->
+<section id="quiz" class="quiz">
+  <div class="quiz-bg-gradient" aria-hidden="true"></div>
+  <div class="container quiz-intro">
+    <span class="quiz-pill">Тест на профессию</span>
+    <h2 class="quiz-title">Не знаешь, что выбрать? <em>Мы&nbsp;подскажем.</em></h2>
+    <p class="quiz-lead">10 вопросов — и узнаешь, какая из 10 специальностей КРМК подходит тебе больше всего.</p>
+    <button class="btn btn-primary quiz-open" id="quizOpen">Пройти тест <span aria-hidden="true">→</span></button>
+  </div>
+</section>
+
+<!-- Quiz Modal -->
+<div class="quiz-modal" id="quizModal" aria-hidden="true">
+  <div class="quiz-modal-bg" data-close></div>
+  <div class="quiz-modal-card" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+    <button class="quiz-close" data-close aria-label="Закрыть тест">✕</button>
+
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar"><span></span></div>
+      <div class="quiz-progress-text">Вопрос 1 из 10</div>
+    </div>
+
+    <div class="quiz-steps">
+      <!-- Q1 -->
+      <div class="quiz-step active" data-step="0">
+        <h3 id="quizTitle">Что тебе ближе всего?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"3":2,"7":1,"10":2}'>Работать руками с металлом</button>
+          <button class="quiz-option" data-score='{"5":2,"9":2}'>Паять и собирать электронику</button>
+          <button class="quiz-option" data-score='{"2":2,"1":1}'>Программировать</button>
+          <button class="quiz-option" data-score='{"4":2,"6":1}'>Создавать визуальный контент</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-step" data-step="1">
+        <h3>Какой школьный предмет тебе нравится больше?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"1":1,"3":1,"7":1,"8":1}'>Физика и математика</button>
+          <button class="quiz-option" data-score='{"2":2,"1":1}'>Информатика</button>
+          <button class="quiz-option" data-score='{"4":2,"6":1}'>Изобразительное искусство</button>
+          <button class="quiz-option" data-score='{"3":1,"7":1,"9":1,"10":2}'>Технология и труд</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-step" data-step="2">
+        <h3>Что вдохновляет в работе?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"8":2,"1":1,"5":1}'>Точность и стандарты</button>
+          <button class="quiz-option" data-score='{"4":2,"6":2}'>Творчество и свобода</button>
+          <button class="quiz-option" data-score='{"1":2,"2":2,"5":1}'>Технологии и инновации</button>
+          <button class="quiz-option" data-score='{"3":2,"7":1,"10":1}'>Готовый продукт</button>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="quiz-step" data-step="3">
+        <h3>Где ты хочешь работать?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"3":2,"7":2,"10":1}'>В цеху, у станка</button>
+          <button class="quiz-option" data-score='{"5":2,"8":1,"9":2}'>В лаборатории с приборами</button>
+          <button class="quiz-option" data-score='{"2":2,"4":1,"1":1}'>За компьютером</button>
+          <button class="quiz-option" data-score='{"6":2,"8":1}'>С людьми, в команде</button>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="quiz-step" data-step="4">
+        <h3>Как ты решаешь сложные задачи?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"3":2,"7":1,"10":1}'>Иду шаг за шагом по чертежу</button>
+          <button class="quiz-option" data-score='{"5":2,"9":2}'>Использую измерительные приборы</button>
+          <button class="quiz-option" data-score='{"2":2,"1":1}'>Пишу алгоритм или код</button>
+          <button class="quiz-option" data-score='{"4":2,"6":2}'>Ищу креативное решение</button>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="quiz-step" data-step="5">
+        <h3>Какое хобби тебе ближе?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"1":2,"3":1,"7":1,"10":1}'>Конструкторы и моделизм</button>
+          <button class="quiz-option" data-score='{"5":2,"9":2}'>Радиолюбительство</button>
+          <button class="quiz-option" data-score='{"2":2}'>Программирование и игры</button>
+          <button class="quiz-option" data-score='{"4":2}'>Рисование, фото, видеомонтаж</button>
+          <button class="quiz-option" data-score='{"6":2,"8":1}'>Организация мероприятий</button>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="quiz-step" data-step="6">
+        <h3>Чем хочется заниматься в будущем?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"1":2,"7":1}'>Создавать роботов и автоматизацию</button>
+          <button class="quiz-option" data-score='{"5":2,"9":2}'>Разрабатывать электронные устройства</button>
+          <button class="quiz-option" data-score='{"2":2}'>Создавать программы и системы</button>
+          <button class="quiz-option" data-score='{"4":2}'>Делать дизайн и контент</button>
+          <button class="quiz-option" data-score='{"6":1,"8":2}'>Управлять проектами</button>
+          <button class="quiz-option" data-score='{"3":2,"10":2}'>Обрабатывать металл, делать детали</button>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="quiz-step" data-step="7">
+        <h3>Что для тебя важно в профессии?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"1":1,"2":1,"3":1,"7":1,"8":1}'>Стабильность и востребованность</button>
+          <button class="quiz-option" data-score='{"1":1,"2":2,"5":1}'>Постоянное развитие</button>
+          <button class="quiz-option" data-score='{"4":2,"6":2}'>Творческое самовыражение</button>
+          <button class="quiz-option" data-score='{"3":1,"5":1,"7":1,"9":1,"10":2}'>Работа руками</button>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="quiz-step" data-step="8">
+        <h3>Что описывает тебя лучше всего?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"2":1,"5":1,"8":2,"9":1}'>Логика и точность</button>
+          <button class="quiz-option" data-score='{"3":2,"7":1,"10":2}'>Любовь к инструментам</button>
+          <button class="quiz-option" data-score='{"5":2,"9":2}'>Интерес к схемам и электронике</button>
+          <button class="quiz-option" data-score='{"4":2}'>Чувство эстетики</button>
+          <button class="quiz-option" data-score='{"6":2}'>Общение и события</button>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="quiz-step" data-step="9">
+        <h3>Какая профессия привлекает интуитивно?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score='{"1":3}'>Робототехник</button>
+          <button class="quiz-option" data-score='{"2":3}'>IT-специалист</button>
+          <button class="quiz-option" data-score='{"3":3}'>Технолог-машиностроитель</button>
+          <button class="quiz-option" data-score='{"4":3}'>Дизайнер</button>
+          <button class="quiz-option" data-score='{"5":3,"9":1}'>Электронщик</button>
+          <button class="quiz-option" data-score='{"6":3}'>Event-менеджер</button>
+          <button class="quiz-option" data-score='{"7":3}'>Оператор ЧПУ</button>
+          <button class="quiz-option" data-score='{"8":3}'>Менеджер качества</button>
+          <button class="quiz-option" data-score='{"9":3}'>Монтажник радиоэлектроники</button>
+          <button class="quiz-option" data-score='{"10":3}'>Слесарь</button>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="quiz-step quiz-result" data-step="result">
+        <span class="result-eyebrow">Твоя специальность</span>
+        <h3 class="result-title">—</h3>
+        <p class="result-desc">—</p>
+        <div class="result-actions">
+          <button type="button" class="btn btn-primary" data-consult data-result-consult>Оставить заявку</button>
+          <button type="button" class="btn btn-ghost" data-restart>Пройти заново</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Why us -->
 <section id="why" class="why">
   <div class="container">
     <span class="sec-pill block light">04 — Почему КРМК</span>
