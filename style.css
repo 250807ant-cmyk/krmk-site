@@ -1682,7 +1682,7 @@ section{padding:120px 0}
   .footer-brand{grid-column:1 / -1}
   .footer-map{height:340px;margin-top:0}
   .footer-map-pin{
-    right:auto;left:20px;bottom:20px;
+    left:auto;right:20px;bottom:20px;
     padding:12px 14px;max-width:240px;
   }
   .fmp-label{font-size:15px}
