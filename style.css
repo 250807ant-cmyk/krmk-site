@@ -1145,24 +1145,30 @@ section{padding:120px 0}
   padding:140px 0;
   position:relative;
   text-align:center;
-  background:#0a0a0a; /* fallback while video loads */
+  background:#0a0a0a;
   overflow:hidden;
   min-height:560px;
 }
-.quiz-bg-video{
-  position:absolute;inset:0;
-  width:100%;height:100%;
-  object-fit:cover;
-  z-index:0;
-  pointer-events:none;
-}
-.quiz-bg-overlay{
+/* Mesh gradient in brand colors — replaces the video background */
+.quiz-bg-gradient{
   position:absolute;inset:0;
   background:
-    radial-gradient(900px 600px at 50% 0%, rgba(0,0,0,.18) 0%, transparent 60%),
-    linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.38) 100%);
-  z-index:1;
+    radial-gradient(800px 600px at 18% 28%, rgba(30,163,63,.55)  0%, transparent 55%),
+    radial-gradient(700px 500px at 82% 22%, rgba(229,57,53,.45)  0%, transparent 55%),
+    radial-gradient(900px 700px at 50% 88%, rgba(94,53,177,.55)  0%, transparent 60%),
+    radial-gradient(600px 500px at 92% 72%, rgba(249,168,37,.40) 0%, transparent 55%),
+    linear-gradient(180deg, #0a0a0a 0%, #14101e 100%);
+  filter:saturate(1.05);
+  z-index:0;
   pointer-events:none;
+  animation:quiz-bg-shift 22s ease-in-out infinite alternate;
+}
+@keyframes quiz-bg-shift{
+  0%   { background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%, 0 0; }
+  100% { background-position: 5% -3%, 95% 5%, -3% 92%, 105% 95%, 0 0; }
+}
+@media (prefers-reduced-motion: reduce){
+  .quiz-bg-gradient{animation:none}
 }
 .quiz > .container{position:relative;z-index:2}
 

@@ -187,32 +187,6 @@ window.addEventListener('scroll',()=>{
   update();
 })();
 
-// === Quiz background video — play once when section enters viewport ===
-(function(){
-  const section = document.getElementById('quiz');
-  if(!section) return;
-  const video = section.querySelector('.quiz-bg-video');
-  if(!video) return;
-
-  // make sure it starts from the first frame and is not looping
-  video.loop = false;
-  try { video.currentTime = 0; } catch(_) {}
-  try { video.pause(); } catch(_) {}
-
-  let played = false;
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if(e.isIntersecting && !played){
-        played = true;
-        const p = video.play();
-        if(p && p.catch) p.catch(() => {});
-        io.disconnect();
-      }
-    });
-  }, { threshold: 0.25 });
-  io.observe(section);
-})();
-
 // === Specs accordion ===
 (function(){
   const items = document.querySelectorAll('.acc-item');
