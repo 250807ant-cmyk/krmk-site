@@ -1793,12 +1793,16 @@ section{padding:120px 0}
   .nav-inner .nav-pill,
   .nav-inner > .nav-cta{display:none}
   .nav-title{
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    height:100%;
     justify-self:center;
-    align-self:center;
+    align-self:stretch;
     font-family:'Manrope';
     font-weight:700;
     font-size:18px;
+    line-height:1;
     letter-spacing:.04em;
     color:#fff;
     pointer-events:none;
