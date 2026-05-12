@@ -836,7 +836,29 @@ section{padding:120px 0}
 }
 .person-info span{font-size:12px;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.12em}
 .person-info h3{font-family:'Manrope';font-size:22px;font-weight:500;margin-top:6px}
-@media (max-width:900px){.people-grid{grid-template-columns:1fr}}
+/* On mobile — swipeable horizontal carousel keeping the desktop 3:4 ratio */
+@media (max-width:900px){
+  .people-grid{
+    display:flex;
+    flex-direction:row;
+    grid-template-columns:none;
+    gap:14px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    padding:4px 20px 8px;
+    margin:0 -20px;
+  }
+  .people-grid::-webkit-scrollbar{display:none}
+  .person-card{
+    flex:0 0 78%;
+    max-width:380px;
+    aspect-ratio:3/4;
+    scroll-snap-align:center;
+  }
+}
 
 /* === CTA === */
 /* === Stack section (Dime/Icon-style scroll-wipe) === */
@@ -1643,9 +1665,7 @@ section{padding:120px 0}
   .why-card h3{font-size:18px}
   .why-card p{font-size:13px}
 
-  /* People */
-  .people-grid{grid-template-columns:1fr;gap:14px}
-  .person-card{aspect-ratio:16/10}
+  /* People — handled by the horizontal carousel rules above */
 
   /* Stack section — keep effect but reduce intensity */
   #apply .stack-content{padding:0 20px}
