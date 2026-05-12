@@ -798,9 +798,20 @@ section{padding:120px 0}
 .why-grid .why-card:nth-child(4)::before{background:radial-gradient(circle, rgba(94,53,177,.45) 0%, transparent 65%)}   /* purple */
 .why-grid .why-card:nth-child(5)::before{background:radial-gradient(circle, rgba(30,163,63,.40) 0%, transparent 65%)}   /* green (loop) */
 
-.why-card:hover::before{
-  opacity:1;
-  transform:scale(1.1);
+/* hover-fired blur on devices that actually have a hover capability */
+@media (hover: hover){
+  .why-card:hover::before{
+    opacity:1;
+    transform:scale(1.1);
+  }
+}
+/* On touch / no-hover devices keep the colored blur visible by default
+   (no "sticky hover" while scrolling) */
+@media (hover: none){
+  .why-card::before{
+    opacity:.85;
+    transform:scale(1.05);
+  }
 }
 .why-num{
   font-family:'Manrope';color:#737373;font-size:13px;font-weight:500;
