@@ -648,24 +648,19 @@ window.addEventListener('scroll',()=>{
   // Cache: [{el, speed, axis: 'y' | 'x', baseScale}]
   const items = [];
 
-  // Person card images — vertical parallax inside each card
+  // Person card images — vertical parallax via CSS variable (so hover-zoom can co-exist)
   document.querySelectorAll('.person-card img').forEach(img => {
-    items.push({ el: img, container: img.closest('.person-card'), speed: 30, axis: 'y' });
+    items.push({ el: img, container: img.closest('.person-card'), speed: 70, useVar: true });
   });
-  // Footer map pin — gentle vertical drift
+  // Footer map pin — vertical drift
   const pin = document.querySelector('.footer-map-pin');
   if(pin){
-    items.push({ el: pin, container: pin.closest('.footer-map'), speed: 22, axis: 'y' });
+    items.push({ el: pin, container: pin.closest('.footer-map'), speed: 45 });
   }
-  // Hero background video — deeper parallax
-  const heroVideo = document.querySelector('.hero-video');
-  if(heroVideo){
-    items.push({ el: heroVideo, container: heroVideo.closest('.hero'), speed: 100, axis: 'y', isVideo: true });
-  }
-  // Quiz background video
+  // Quiz background video — deeper parallax
   const quizVideo = document.querySelector('.quiz-bg-video');
   if(quizVideo){
-    items.push({ el: quizVideo, container: quizVideo.closest('.quiz'), speed: 70, axis: 'y', isVideo: true });
+    items.push({ el: quizVideo, container: quizVideo.closest('.quiz'), speed: 130, isVideo: true });
   }
 
   if(!items.length) return;
@@ -673,16 +668,17 @@ window.addEventListener('scroll',()=>{
   let ticking = false;
   function update(){
     const vh = window.innerHeight;
-    items.forEach(({ el, container, speed, isVideo }) => {
+    items.forEach(({ el, container, speed, isVideo, useVar }) => {
       const rect = (container || el).getBoundingClientRect();
       if(rect.bottom < -100 || rect.top > vh + 100) return;
       const center = rect.top + rect.height / 2;
       const offset = (center - vh / 2) / vh; // ~ -1..1
       const t = -offset * speed;
-      if(isVideo){
-        el.style.transform = `translateY(${t}px) scale(1.08)`;
-      } else if(el.tagName === 'IMG'){
-        el.style.transform = `translateY(${t}px) scale(1.08)`;
+      if(useVar){
+        // Person card images: set CSS variable, transform itself is in CSS
+        el.style.setProperty('--py', t + 'px');
+      } else if(isVideo){
+        el.style.transform = `translateY(${t}px) scale(1.1)`;
       } else {
         el.style.transform = `translateY(${t}px)`;
       }
