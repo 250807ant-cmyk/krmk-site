@@ -564,3 +564,78 @@ window.addEventListener('scroll',()=>{
     if(nav.classList.contains('menu-open') && !nav.contains(e.target)) close();
   });
 })();
+
+// === Custom cursor (desktop / hover-capable devices only) ===
+(function(){
+  if(!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  const dot  = document.createElement('div');
+  const ring = document.createElement('div');
+  dot.className  = 'cursor-dot';
+  ring.className = 'cursor-ring';
+  document.body.appendChild(dot);
+  document.body.appendChild(ring);
+
+  let mx = -100, my = -100;
+  let rx = -100, ry = -100;
+  let rafId = null;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX;
+    my = e.clientY;
+    dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+    if(!rafId) loop();
+  }, { passive:true });
+
+  function loop(){
+    rx += (mx - rx) * 0.2;
+    ry += (my - ry) * 0.2;
+    ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+    if(Math.abs(mx - rx) < 0.2 && Math.abs(my - ry) < 0.2){
+      rafId = null;
+      return;
+    }
+    rafId = requestAnimationFrame(loop);
+  }
+
+  // Hide cursor when leaving / coming back to the window
+  document.addEventListener('mouseleave', () => {
+    dot.classList.add('is-out');
+    ring.classList.add('is-out');
+  });
+  document.addEventListener('mouseenter', () => {
+    dot.classList.remove('is-out');
+    ring.classList.remove('is-out');
+  });
+
+  // Pressed state
+  document.addEventListener('mousedown', () => {
+    dot.classList.add('is-down');
+    ring.classList.add('is-down');
+  });
+  document.addEventListener('mouseup', () => {
+    dot.classList.remove('is-down');
+    ring.classList.remove('is-down');
+  });
+
+  // Hover state for interactive elements
+  const INTERACTIVE = 'a, button, summary, label, input[type="checkbox"], select, [role="tab"], [role="button"], .acc-head, .pl-tab, [data-consult], [data-cursor="hover"]';
+  document.addEventListener('mouseover', e => {
+    if(e.target.closest && e.target.closest(INTERACTIVE)){
+      dot.classList.add('is-hover');
+      ring.classList.add('is-hover');
+    }
+  });
+  document.addEventListener('mouseout', e => {
+    if(e.target.closest && e.target.closest(INTERACTIVE)){
+      const toEl = e.relatedTarget;
+      if(!toEl || !(toEl.closest && toEl.closest(INTERACTIVE))){
+        dot.classList.remove('is-hover');
+        ring.classList.remove('is-hover');
+      }
+    }
+  });
+
+  // Tag the body so CSS can apply cursor:none
+  document.documentElement.classList.add('has-custom-cursor');
+})();
