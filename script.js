@@ -41,7 +41,7 @@ const io=new IntersectionObserver(entries=>{
   });
 },{threshold:.12,rootMargin:'0px 0px -60px 0px'});
 
-document.querySelectorAll('.sec-head, .about-grid, .about-image, .pillar, .acc-item, .why-card, .person-card, .fc-card').forEach(el=>{
+document.querySelectorAll('.sec-head, .about-grid, .about-image, .pillar, .acc-item, .why-card, .person-card, .fc-card, .specs-title, .why-title, .sec-pill.block').forEach(el=>{
   el.classList.add('reveal');
   io.observe(el);
 });
@@ -630,6 +630,11 @@ window.addEventListener('scroll',()=>{
   const pin = document.querySelector('.footer-map-pin');
   if(pin){
     items.push({ el: pin, container: pin.closest('.footer-map'), speed: 45 });
+  }
+  // Quiz background gradient — gentle drift
+  const quizBg = document.querySelector('.quiz-bg-gradient');
+  if(quizBg){
+    items.push({ el: quizBg, container: quizBg.closest('.quiz'), speed: 90, isVideo: true });
   }
 
   if(!items.length) return;

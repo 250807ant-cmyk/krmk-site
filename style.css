@@ -1151,10 +1151,12 @@ section{padding:120px 0}
 }
 /* Background image — replaces the video */
 .quiz-bg-gradient{
-  position:absolute;inset:0;
+  position:absolute;
+  top:-12%;left:0;right:0;bottom:-12%;
   background:url('assets/%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82.png') center/cover no-repeat, #0a0a0a;
   z-index:0;
   pointer-events:none;
+  will-change:transform;
 }
 .quiz > .container{position:relative;z-index:2}
 
@@ -1904,4 +1906,64 @@ section{padding:120px 0}
 }
 .person-card:hover .person-photo img{
   transform:scale(1.12);
+}
+
+/* ===== Text appear animations ===== */
+
+/* Hero text — staged fade-in on load */
+.hero-eyebrow,
+.hero-title,
+.hero-sub,
+.hero-cta,
+.hero-stats{
+  opacity:0;
+  transform:translateY(28px);
+  animation:hero-fade-in .9s cubic-bezier(.16,.84,.44,1) forwards;
+}
+.hero-eyebrow{animation-delay:.10s}
+.hero-title  {animation-delay:.22s}
+.hero-sub    {animation-delay:.42s}
+.hero-cta    {animation-delay:.58s}
+.hero-stats  {animation-delay:.72s}
+@keyframes hero-fade-in{
+  to{opacity:1;transform:none}
+}
+
+/* Section header — staggered reveal: pill → title → lead */
+.sec-head .sec-pill,
+.sec-head .sec-title,
+.sec-head .sec-lead{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .8s cubic-bezier(.16,.84,.44,1),
+             transform .8s cubic-bezier(.16,.84,.44,1);
+}
+.sec-head.visible .sec-pill {opacity:1;transform:none;transition-delay:0s}
+.sec-head.visible .sec-title{opacity:1;transform:none;transition-delay:.15s}
+.sec-head.visible .sec-lead {opacity:1;transform:none;transition-delay:.30s}
+
+/* Block pills (.sec-pill.block) and specs/why titles — also stagger */
+.specs-title,
+.why-title{
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .8s cubic-bezier(.16,.84,.44,1),
+             transform .8s cubic-bezier(.16,.84,.44,1);
+}
+.sec-pill.block{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .7s cubic-bezier(.16,.84,.44,1),
+             transform .7s cubic-bezier(.16,.84,.44,1);
+}
+.sec-pill.block.visible{opacity:1;transform:none}
+.specs-title.visible,
+.why-title.visible{opacity:1;transform:none;transition-delay:.12s}
+
+@media (prefers-reduced-motion: reduce){
+  .hero-eyebrow,.hero-title,.hero-sub,.hero-cta,.hero-stats,
+  .sec-head .sec-pill,.sec-head .sec-title,.sec-head .sec-lead,
+  .specs-title,.why-title,.sec-pill.block{
+    opacity:1 !important;transform:none !important;animation:none !important;
+  }
 }
