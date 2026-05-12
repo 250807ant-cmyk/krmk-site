@@ -1794,7 +1794,9 @@ section{padding:120px 0}
   .nav-inner > .nav-cta{display:none}
   .nav-title{
     display:inline-block;
-    justify-self:center;
+    position:absolute;
+    left:50%;top:50%;
+    transform:translate(-50%, -50%);
     font-family:'Manrope';
     font-weight:700;
     font-size:18px;
