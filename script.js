@@ -57,6 +57,8 @@ window.addEventListener('scroll',()=>{
 (function(){
   const pin   = document.querySelector('.about-pin');
   if(!pin) return;
+  // disable the pin/expand effect on mobile — it's replaced by a plain stacked layout via CSS
+  if(window.matchMedia('(max-width:900px)').matches) return;
   const frame = pin.querySelector('.about-frame');
   const img   = pin.querySelector('.about-img');
   const head  = pin.querySelector('.about-head');
@@ -538,4 +540,29 @@ window.addEventListener('scroll',()=>{
       el.addEventListener('input', () => el.classList.remove('is-error'));
     });
   }
+})();
+
+// === Mobile nav burger ===
+(function(){
+  const nav    = document.querySelector('.nav');
+  const btn    = document.getElementById('navBurger');
+  const menu   = document.getElementById('navMobile');
+  if(!nav || !btn || !menu) return;
+
+  function close(){
+    nav.classList.remove('menu-open');
+    btn.setAttribute('aria-expanded','false');
+    menu.setAttribute('aria-hidden','true');
+  }
+  function toggle(){
+    const open = !nav.classList.contains('menu-open');
+    nav.classList.toggle('menu-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+  }
+  btn.addEventListener('click', toggle);
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  document.addEventListener('click', e => {
+    if(nav.classList.contains('menu-open') && !nav.contains(e.target)) close();
+  });
 })();

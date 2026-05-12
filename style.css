@@ -1559,3 +1559,239 @@ section{padding:120px 0}
   transform:translateY(-50%);
   background:#e53935;
 }
+
+/* =========================================================
+   MOBILE ADAPTATION — comprehensive responsive overrides
+   ========================================================= */
+
+/* Tablets and below */
+@media (max-width:900px){
+
+  /* Containers — tighter padding */
+  .container{padding:0 20px}
+  section{padding:80px 0}
+
+  /* Hero — smaller everything */
+  .hero{
+    min-height:auto;
+    padding:120px 0 60px;
+  }
+  .hero-title{font-size:clamp(36px,9vw,64px);line-height:1.04;margin-bottom:20px}
+  .hero-sub{font-size:15px;margin-bottom:32px;max-width:none}
+  .hero-cta{gap:10px;margin-bottom:48px}
+  .hero-cta .btn{padding:13px 22px;font-size:14px}
+  .hero-stats{gap:32px}
+  .hero-stats b{font-size:28px}
+  .hero-stats span{font-size:11px}
+  .hero-eyebrow{font-size:11px;margin-bottom:20px}
+  .hero-scroll{display:none}
+
+  /* Sec-head & big titles */
+  .sec-title,
+  .specs-title,
+  .why-title,
+  .pl-title{
+    font-size:clamp(28px,6vw,42px) !important;
+    line-height:1.08;
+  }
+  .sec-pill, .sec-pill.block, .pl-pill, .quiz-pill, .consult-pill{
+    font-size:11px;padding:6px 14px;
+  }
+  .sec-head{margin-bottom:36px;gap:14px}
+  .sec-pill.block{margin-bottom:28px}
+
+  /* About — disable the pin/expand on mobile, use a plain photo */
+  .about-pin{height:auto !important}
+  .about-pin-inner{
+    position:relative !important;
+    height:auto !important;
+    overflow:visible !important;
+    padding:60px 0 40px;
+  }
+  .about-head{
+    position:relative !important;
+    top:auto !important;
+    left:0 !important;right:0 !important;
+    transform:none !important;
+    opacity:1 !important;
+    padding:0 20px;
+    margin-bottom:32px !important;
+    max-width:none;
+  }
+  .about-head .sec-title{color:#0a0a0a !important}
+  .about-head .sec-lead{color:#525252 !important}
+  .about-head .rainbow .l{--c:initial}
+  .about-frame{
+    position:relative !important;
+    inset:auto !important;
+    width:100%;
+    height:auto;
+    aspect-ratio:4/5;
+    clip-path:none !important;
+    -webkit-clip-path:none !important;
+    border-radius:18px;
+    overflow:hidden;
+  }
+  .about-img{
+    --scale:1 !important;
+    transform:none !important;
+  }
+
+  /* Pillars v2 — single column, sidebar not sticky */
+  .pl-grid{grid-template-columns:1fr;gap:32px}
+  .pl-sticky{position:static !important;top:auto !important}
+  .pl-card{padding:28px 22px;min-height:auto}
+  .pl-card-title{font-size:24px}
+  .pl-card-text{font-size:15px}
+  .pl-tabs{flex-wrap:wrap;flex-direction:row;gap:8px}
+  .pl-tab{font-size:14px;padding:9px 16px}
+
+  /* Specs accordion */
+  .acc-head{
+    grid-template-columns:34px 1fr 32px;
+    gap:12px;
+    padding:18px 12px;
+  }
+  .acc-name{font-size:15px;line-height:1.3}
+  .acc-tag{display:none}
+  .acc-body-inner{
+    grid-template-columns:1fr !important;
+    grid-template-areas:"video" "info" "btn" !important;
+    gap:18px !important;
+    padding:8px 12px 24px !important;
+  }
+  .acc-video{margin:0}
+  .acc-grid{gap:16px}
+  .acc-cell p{font-size:14px}
+  .acc-label{font-size:10px}
+
+  /* Quiz — softer paddings */
+  .quiz{padding:80px 0;min-height:auto}
+  .quiz-intro{gap:16px;padding:0 20px}
+  .quiz-title{font-size:clamp(28px,7vw,40px)}
+  .quiz-lead{font-size:15px}
+  .quiz-bg-video{filter:brightness(.8) saturate(.9)}
+
+  /* Why — 1 column on small screens */
+  .why-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .why-card{padding:22px 18px;min-height:200px}
+  .why-card h3{font-size:18px}
+  .why-card p{font-size:13px}
+
+  /* People */
+  .people-grid{grid-template-columns:1fr;gap:14px}
+  .person-card{aspect-ratio:16/10}
+
+  /* Stack section — keep effect but reduce intensity */
+  #apply .stack-content{padding:0 20px}
+  #apply .stack-title{font-size:clamp(34px,9vw,52px)}
+  #apply .stack-desc{font-size:14px}
+  #apply .stack-actions{gap:10px}
+  #apply .stack-actions .btn{padding:12px 20px;font-size:14px}
+
+  /* Footer */
+  .footer-top, .footer-grid{
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .footer-brand{grid-column:1 / -1}
+  .footer-map{height:340px;margin-top:0}
+  .footer-map-pin{
+    right:auto;left:20px;bottom:20px;
+    padding:12px 14px;max-width:240px;
+  }
+  .fmp-label{font-size:15px}
+  .fmp-addr{font-size:11px}
+}
+
+/* Phones */
+@media (max-width:540px){
+  /* Nav — hide pill (already), tighten CTA */
+  .nav-inner{padding:0 14px;gap:8px}
+  .nav-cta{padding:0 14px;font-size:13px}
+
+  .hero-title{font-size:clamp(32px,10vw,48px)}
+  .hero-stats{gap:20px}
+  .hero-stats > div{flex:0 0 calc(50% - 12px)}
+
+  /* Why single column */
+  .why-grid{grid-template-columns:1fr}
+
+  /* Footer to single column */
+  .footer-top, .footer-grid{grid-template-columns:1fr;gap:24px}
+  .footer-brand{grid-column:auto}
+
+  /* Modal — full screen feel */
+  .consult-modal{padding:12px}
+  .consult-modal-card{padding:30px 22px 24px;border-radius:18px;max-height:94vh}
+  .quiz-modal{padding:12px}
+  .quiz-modal-card{padding:54px 18px 22px;border-radius:18px}
+
+  /* About — slimmer */
+  .about-pin-inner{padding:40px 0 32px}
+  .about-frame{aspect-ratio:3/4}
+}
+
+/* === Mobile nav: burger + dropdown menu === */
+.nav-burger{
+  display:none;
+  width:48px;height:48px;
+  border-radius:999px;
+  background:rgba(20,20,20,.16);
+  backdrop-filter:blur(16px) saturate(150%);
+  -webkit-backdrop-filter:blur(16px) saturate(150%);
+  border:1px solid rgba(255,255,255,.14);
+  cursor:pointer;
+  padding:0;
+  position:relative;
+  pointer-events:auto;
+}
+.nav-burger span{
+  position:absolute;left:50%;top:50%;
+  width:18px;height:1.5px;background:#fff;
+  transform:translate(-50%,-50%);
+  transition:transform .3s ease, opacity .25s ease;
+}
+.nav-burger span:nth-child(1){transform:translate(-50%,calc(-50% - 5px))}
+.nav-burger span:nth-child(3){transform:translate(-50%,calc(-50% + 5px))}
+.nav.menu-open .nav-burger span:nth-child(1){transform:translate(-50%,-50%) rotate(45deg)}
+.nav.menu-open .nav-burger span:nth-child(2){opacity:0}
+.nav.menu-open .nav-burger span:nth-child(3){transform:translate(-50%,-50%) rotate(-45deg)}
+
+.nav-mobile{
+  position:absolute;top:60px;left:16px;right:16px;
+  background:rgba(20,20,20,.92);
+  backdrop-filter:blur(20px) saturate(160%);
+  -webkit-backdrop-filter:blur(20px) saturate(160%);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;
+  padding:10px;
+  display:none;flex-direction:column;
+  opacity:0;
+  transform:translateY(-8px);
+  transition:opacity .25s ease, transform .25s ease;
+  pointer-events:auto;
+}
+.nav-mobile a{
+  display:block;
+  padding:14px 18px;
+  font-size:15px;font-weight:500;color:#fff;
+  border-radius:12px;
+  transition:background .2s ease;
+}
+.nav-mobile a:hover{background:rgba(255,255,255,.08)}
+.nav.menu-open .nav-mobile{
+  display:flex;
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media (max-width:760px){
+  .nav-burger{display:grid;place-items:center}
+  .nav-inner{grid-template-columns:auto 1fr auto auto}
+  .nav-inner .nav-pill{display:none}
+}
+@media (min-width:761px){
+  .nav-burger{display:none}
+  .nav-mobile{display:none !important}
+}
