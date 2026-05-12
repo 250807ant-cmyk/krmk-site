@@ -118,10 +118,6 @@ em{font-style:italic;font-family:'Manrope',serif;font-weight:500}
   .nav-inner > *{height:48px}
   .nav-logo{width:48px}
 }
-@media (max-width:600px){
-  .nav-cta span{display:none}
-  .nav-cta{padding:0 14px;gap:0}
-}
 
 /* === Hero === */
 .hero{
@@ -1709,9 +1705,8 @@ section{padding:120px 0}
 
 /* Phones */
 @media (max-width:540px){
-  /* Nav — hide pill (already), tighten CTA */
+  /* Nav — tighter on phones */
   .nav-inner{padding:0 14px;gap:8px}
-  .nav-cta{padding:0 14px;font-size:13px}
 
   .hero-title{font-size:clamp(32px,10vw,48px)}
   .hero-stats{gap:20px}
@@ -1791,10 +1786,22 @@ section{padding:120px 0}
 
 @media (max-width:760px){
   .nav-burger{display:grid;place-items:center}
-  .nav-inner{grid-template-columns:auto 1fr auto auto}
-  .nav-inner .nav-pill{display:none}
+  /* hide pill + main CTA: nav becomes logo | flex | burger */
+  .nav-inner{grid-template-columns:auto 1fr auto}
+  .nav-inner .nav-pill,
+  .nav-inner > .nav-cta{display:none}
 }
 @media (min-width:761px){
   .nav-burger{display:none}
   .nav-mobile{display:none !important}
 }
+
+/* CTA inside the burger menu */
+.nav-mobile-cta{
+  margin-top:8px;
+  background:#fff;
+  color:#0a0a0a !important;
+  text-align:center;
+  font-weight:600;
+}
+.nav-mobile-cta:hover{background:#f5f5f5 !important}
