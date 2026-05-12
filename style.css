@@ -1805,6 +1805,7 @@ section{padding:120px 0}
     line-height:1;
     letter-spacing:.04em;
     color:#fff;
+    mix-blend-mode:difference;   /* always readable: white on dark, dark on light */
     pointer-events:none;
   }
 }
