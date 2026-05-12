@@ -1786,10 +1786,23 @@ section{padding:120px 0}
 
 @media (max-width:760px){
   .nav-burger{display:grid;place-items:center}
-  /* hide pill + main CTA: nav becomes logo | flex | burger */
+  /* logo | title | burger */
   .nav-inner{grid-template-columns:auto 1fr auto}
   .nav-inner .nav-pill,
   .nav-inner > .nav-cta{display:none}
+  .nav-title{
+    display:inline-block;
+    justify-self:center;
+    font-family:'Manrope';
+    font-weight:700;
+    font-size:18px;
+    letter-spacing:.04em;
+    color:#fff;
+    pointer-events:none;
+  }
+}
+@media (min-width:761px){
+  .nav-title{display:none}
 }
 @media (min-width:761px){
   .nav-burger{display:none}
