@@ -57,8 +57,6 @@ window.addEventListener('scroll',()=>{
 (function(){
   const pin   = document.querySelector('.about-pin');
   if(!pin) return;
-  // disable the pin/expand effect on mobile — it's replaced by a plain stacked layout via CSS
-  if(window.matchMedia('(max-width:900px)').matches) return;
   const frame = pin.querySelector('.about-frame');
   const img   = pin.querySelector('.about-img');
   const head  = pin.querySelector('.about-head');

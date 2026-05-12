@@ -1600,42 +1600,7 @@ section{padding:120px 0}
   .sec-head{margin-bottom:36px;gap:14px}
   .sec-pill.block{margin-bottom:28px}
 
-  /* About — disable the pin/expand on mobile, use a plain photo */
-  .about-pin{height:auto !important}
-  .about-pin-inner{
-    position:relative !important;
-    height:auto !important;
-    overflow:visible !important;
-    padding:60px 0 40px;
-  }
-  .about-head{
-    position:relative !important;
-    top:auto !important;
-    left:0 !important;right:0 !important;
-    transform:none !important;
-    opacity:1 !important;
-    padding:0 20px;
-    margin-bottom:32px !important;
-    max-width:none;
-  }
-  .about-head .sec-title{color:#0a0a0a !important}
-  .about-head .sec-lead{color:#525252 !important}
-  .about-head .rainbow .l{--c:initial}
-  .about-frame{
-    position:relative !important;
-    inset:auto !important;
-    width:100%;
-    height:auto;
-    aspect-ratio:4/5;
-    clip-path:none !important;
-    -webkit-clip-path:none !important;
-    border-radius:18px;
-    overflow:hidden;
-  }
-  .about-img{
-    --scale:1 !important;
-    transform:none !important;
-  }
+  /* About — scroll-pin effect is preserved (mobile values handled by JS) */
 
   /* Pillars v2 — single column, sidebar not sticky */
   .pl-grid{grid-template-columns:1fr;gap:32px}
