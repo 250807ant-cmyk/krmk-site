@@ -639,3 +639,54 @@ window.addEventListener('scroll',()=>{
   // Tag the body so CSS can apply cursor:none
   document.documentElement.classList.add('has-custom-cursor');
 })();
+
+// === Subtle parallax on photos + footer map pin ===
+(function(){
+  // Skip on touch/reduced-motion devices
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Cache: [{el, speed, axis: 'y' | 'x', baseScale}]
+  const items = [];
+
+  // Person card images — vertical parallax inside each card
+  document.querySelectorAll('.person-card img').forEach(img => {
+    items.push({ el: img, container: img.closest('.person-card'), speed: 30, axis: 'y' });
+  });
+  // Footer map pin — gentle vertical drift
+  const pin = document.querySelector('.footer-map-pin');
+  if(pin){
+    items.push({ el: pin, container: pin.closest('.footer-map'), speed: 22, axis: 'y' });
+  }
+
+  if(!items.length) return;
+
+  let ticking = false;
+  function update(){
+    const vh = window.innerHeight;
+    items.forEach(({ el, container, speed, axis }) => {
+      const rect = (container || el).getBoundingClientRect();
+      if(rect.bottom < -100 || rect.top > vh + 100) return;
+      // -1 when container's center is above viewport, +1 when below; 0 = perfect center
+      const center = rect.top + rect.height / 2;
+      const offset = (center - vh / 2) / vh; // ~ -1..1
+      const t = -offset * speed;
+      // person-card img already has scale built into transform via CSS hover (transition removed via JS update)
+      if(el.tagName === 'IMG'){
+        el.style.transform = `translateY(${t}px) scale(1.08)`;
+      } else {
+        el.style.transform = `translateY(${t}px)`;
+      }
+    });
+    ticking = false;
+  }
+
+  function onScroll(){
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive:true });
+  window.addEventListener('resize', onScroll);
+  update();
+})();
