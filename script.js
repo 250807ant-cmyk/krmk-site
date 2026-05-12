@@ -153,13 +153,18 @@ window.addEventListener('scroll',()=>{
 
       if(i === items.length - 1){
         item.style.clipPath = 'inset(0 0 0% 0)';
+        item.style.pointerEvents = 'auto';
       } else if(prog <= 0){
         item.style.clipPath = 'inset(0 0 0% 0)';
+        item.style.pointerEvents = 'auto';
       } else if(prog < 1){
         const clip = prog * 100;
         item.style.clipPath = `inset(0 0 ${clip}% 0)`;
+        // once the panel is more than ~95% clipped, stop intercepting clicks
+        item.style.pointerEvents = prog > 0.95 ? 'none' : 'auto';
       } else {
         item.style.clipPath = 'inset(0 0 100% 0)';
+        item.style.pointerEvents = 'none';
       }
 
       // subtle parallax on bg
