@@ -1631,7 +1631,9 @@ section{padding:120px 0}
     line-height:1.08;
   }
   .sec-pill, .sec-pill.block, .pl-pill, .quiz-pill, .consult-pill{
-    font-size:11px;padding:6px 14px;
+    font-size:11px;
+    /* keep padding-left from the dot rules — only tune vertical/right padding */
+    padding-top:6px;padding-right:14px;padding-bottom:6px;
   }
   .sec-head{margin-bottom:36px;gap:14px}
   .sec-pill.block{margin-bottom:28px}
