@@ -1896,13 +1896,7 @@ section{padding:120px 0}
 
 .footer-map-pin{will-change:transform}
 
-/* Hero video — keep its original size, no parallax */
-/* Quiz video — oversized so parallax doesn't reveal edges */
-.quiz-bg-video{
-  height:130% !important;
-  top:-15% !important;
-  will-change:transform;
-}
+/* Hero & Quiz background videos — no parallax */
 
 /* Person card — wrap is moved by JS (parallax), img is zoomed by CSS (hover) */
 .person-card{position:relative;overflow:hidden}

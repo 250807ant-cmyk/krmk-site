@@ -657,11 +657,6 @@ window.addEventListener('scroll',()=>{
   if(pin){
     items.push({ el: pin, container: pin.closest('.footer-map'), speed: 45 });
   }
-  // Quiz background video — deeper parallax
-  const quizVideo = document.querySelector('.quiz-bg-video');
-  if(quizVideo){
-    items.push({ el: quizVideo, container: quizVideo.closest('.quiz'), speed: 130, isVideo: true });
-  }
 
   if(!items.length) return;
 
