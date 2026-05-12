@@ -63,7 +63,7 @@ window.addEventListener('scroll',()=>{
 
   const START  = { padX:13, padTop:42, padBot:6,  r:28, scale:1.12 };
   const END    = { padX:0,  padTop:0,  padBot:0,  r:0,  scale:1.0  };
-  const MOBILE = { padX:6,  padTop:46, padBot:5,  r:24 };
+  const MOBILE = { padX:6,  padTop:28, padBot:5,  r:24 };
 
   const easeOut   = t => 1 - Math.pow(1 - t, 3);
   const easeInOut = t => t < .5 ? 2*t*t : 1 - Math.pow(-2*t + 2, 2)/2;
