@@ -657,21 +657,31 @@ window.addEventListener('scroll',()=>{
   if(pin){
     items.push({ el: pin, container: pin.closest('.footer-map'), speed: 22, axis: 'y' });
   }
+  // Hero background video — deeper parallax
+  const heroVideo = document.querySelector('.hero-video');
+  if(heroVideo){
+    items.push({ el: heroVideo, container: heroVideo.closest('.hero'), speed: 100, axis: 'y', isVideo: true });
+  }
+  // Quiz background video
+  const quizVideo = document.querySelector('.quiz-bg-video');
+  if(quizVideo){
+    items.push({ el: quizVideo, container: quizVideo.closest('.quiz'), speed: 70, axis: 'y', isVideo: true });
+  }
 
   if(!items.length) return;
 
   let ticking = false;
   function update(){
     const vh = window.innerHeight;
-    items.forEach(({ el, container, speed, axis }) => {
+    items.forEach(({ el, container, speed, isVideo }) => {
       const rect = (container || el).getBoundingClientRect();
       if(rect.bottom < -100 || rect.top > vh + 100) return;
-      // -1 when container's center is above viewport, +1 when below; 0 = perfect center
       const center = rect.top + rect.height / 2;
       const offset = (center - vh / 2) / vh; // ~ -1..1
       const t = -offset * speed;
-      // person-card img already has scale built into transform via CSS hover (transition removed via JS update)
-      if(el.tagName === 'IMG'){
+      if(isVideo){
+        el.style.transform = `translateY(${t}px) scale(1.08)`;
+      } else if(el.tagName === 'IMG'){
         el.style.transform = `translateY(${t}px) scale(1.08)`;
       } else {
         el.style.transform = `translateY(${t}px)`;

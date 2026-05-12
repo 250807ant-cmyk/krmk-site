@@ -1908,3 +1908,10 @@ section{padding:120px 0}
 .person-card:hover img{transform:scale(1.08)}
 
 .footer-map-pin{will-change:transform}
+
+/* Parallax for hero/quiz videos — slightly oversized so drift doesn't reveal edges */
+.hero-video, .quiz-bg-video{
+  height:120% !important;
+  top:-10% !important;
+  will-change:transform;
+}
