@@ -1156,6 +1156,14 @@ section{padding:120px 0}
   z-index:0;
   pointer-events:none;
 }
+/* Subtle darkening overlay for better text readability */
+.quiz-bg-gradient::after{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    radial-gradient(1000px 700px at 50% 50%, rgba(0,0,0,.15) 0%, rgba(0,0,0,.32) 100%);
+  pointer-events:none;
+}
 .quiz > .container{position:relative;z-index:2}
 
 .quiz-intro{display:flex;flex-direction:column;align-items:center;gap:20px;max-width:780px;margin:0 auto}
